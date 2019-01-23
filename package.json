@@ -1,0 +1,62 @@
+{
+  "name": "@michael-danilov/mrm-preset-michaeldanilov",
+  "version": "1.0.0",
+  "description": "Michael Danilov's tasks for Mrm",
+  "main": "config.json",
+  "scripts": {
+    "lint": "npm run lint:js && npm run spellcheck",
+    "lint:js": "./node_modules/.bin/eslint --ext .js ./",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "spellcheck": "./node_modules/.bin/yaspeller *.md"
+  },
+  "author": {
+    "name": "Michael Danilov",
+    "email": "michael@danilov.me",
+    "url": "https://danilov.me/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mrm",
+    "mrm-task",
+    "mrm-preset"
+  ],
+  "dependencies": {
+    "mrm-core": "^3.3.0",
+    "mrm-task-contributing": "^1.0.4",
+    "mrm-task-license": "^1.2.3",
+    "mrm-task-readme": "^1.1.3"
+  },
+  "devDependencies": {
+    "eslint": "5.12.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-import-resolver-node": "0.3.2",
+    "eslint-plugin-import": "2.14.0",
+    "husky": "1.3.1",
+    "lint-staged": "8.1.0",
+    "yaspeller": "5.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/eslint"
+    ],
+    "*.md": [
+      "./node_modules/.bin/yaspeller"
+    ]
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelDanilov/mrm-preset-michaeldanilov.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MichaelDanilov/mrm-preset-michaeldanilov/issues"
+  },
+  "homepage": "https://github.com/MichaelDanilov/mrm-preset-michaeldanilov#readme"
+}
