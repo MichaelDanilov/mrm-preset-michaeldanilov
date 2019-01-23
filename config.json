@@ -1,0 +1,24 @@
+{
+  "aliases": {
+    "node": [
+      "package",
+      "nvm",
+      "eslint",
+      "jsconfig",
+      "yaspeller",
+      "lint-staged",
+      "editorconfig",
+      "gitignore",
+      "contributing",
+      "license",
+      "readme"
+    ]
+  },
+  "name": "Michael Danilov",
+  "url": "https://danilov.me",
+  "email": "michael@danilov.me",
+  "github": "MichaelDanilov",
+  "readmeFile": "readme.md",
+  "licenseFile": "license.md",
+  "contributingFile": "contributing.md"
+}
