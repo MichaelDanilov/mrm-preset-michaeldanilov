@@ -1,5 +1,5 @@
 {
-  "name": "@michael-danilov/mrm-preset-michaeldanilov",
+  "name": "@michaeldanilov/mrm-preset-michaeldanilov",
   "version": "1.0.0",
   "description": "Michael Danilov's tasks for Mrm",
   "main": "config.json",
