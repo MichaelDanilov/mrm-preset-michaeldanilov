@@ -1,10 +1,7 @@
 const { packageJson, install } = require('mrm-core');
 
 function task() {
-  const packages = [
-    'husky',
-    'lint-staged',
-  ];
+  const packages = ['husky', 'lint-staged'];
 
   const pkg = packageJson();
 
@@ -16,12 +13,8 @@ function task() {
         },
       },
       'lint-staged': {
-        '*.js': [
-          './node_modules/.bin/eslint',
-        ],
-        '*.md': [
-          './node_modules/.bin/yaspeller',
-        ],
+        '*.(j|t)s?(x)': ['eslint', 'prettier --write'],
+        '*.md': ['yaspeller'],
       },
     })
     .save();
