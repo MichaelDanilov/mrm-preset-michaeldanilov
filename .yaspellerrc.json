@@ -1,12 +1,5 @@
 {
   "lang": "en",
   "ignoreCapitalization": true,
-  "dictionary": [
-    "danilov",
-    "michaeldanilov",
-    "mrm",
-    "md",
-    "sublicense",
-    "NONINFRINGEMENT"
-  ]
+  "dictionary": ["danilov", "michaeldanilov", "mrm", "md", "sublicense", "NONINFRINGEMENT"]
 }
