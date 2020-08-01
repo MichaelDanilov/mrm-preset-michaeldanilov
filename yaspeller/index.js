@@ -4,10 +4,10 @@ function task() {
   const packages = ['yaspeller'];
 
   // .yaspellerrc
-  const yaspellerrc = json('.yaspellerrc');
+  const yaspellerrc = json('.yaspellerrc.json');
   yaspellerrc.set('lang', 'en');
   yaspellerrc.set('ignoreCapitalization', true);
-  yaspellerrc.set('dictionary', ['danilov']);
+  yaspellerrc.set('dictionary', ['danilov', 'sublicense', 'NONINFRINGEMENT']);
 
   yaspellerrc.save();
 
@@ -15,7 +15,7 @@ function task() {
 
   pkg
     // Add spellcheck
-    .setScript('spellcheck', './node_modules/.bin/yaspeller *.md')
+    .setScript('spellcheck', 'yaspeller *.md')
     .appendScript('lint', 'npm run spellcheck')
     .save();
 
