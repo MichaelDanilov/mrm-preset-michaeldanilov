@@ -4,10 +4,11 @@
   "description": "Michael Danilov's tasks for Mrm",
   "main": "config.json",
   "scripts": {
-    "lint": "npm run lint:js && npm run spellcheck",
-    "lint:js": "./node_modules/.bin/eslint --ext .js ./",
+    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:ts": "eslint --ext .ts,.tsx .",
+    "lint": "run-p lint:* && npm run spellcheck",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "spellcheck": "./node_modules/.bin/yaspeller *.md"
+    "spellcheck": "yaspeller *.md"
   },
   "author": {
     "name": "Michael Danilov",
@@ -27,12 +28,18 @@
     "mrm-task-readme": "^1.1.3"
   },
   "devDependencies": {
-    "eslint": "5.16.0",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-import-resolver-node": "0.3.2",
-    "eslint-plugin-import": "2.17.2",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "husky": "2.3.0",
     "lint-staged": "8.1.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7",
     "yaspeller": "5.1.0"
   },
   "husky": {
@@ -42,7 +49,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "./node_modules/.bin/eslint"
+      "eslint",
+      "prettier --write"
     ],
     "*.md": [
       "./node_modules/.bin/yaspeller"
