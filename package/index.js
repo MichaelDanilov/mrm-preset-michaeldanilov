@@ -2,12 +2,7 @@ const path = require('path');
 const { json } = require('mrm-core');
 
 function task(config) {
-  const {
-    name,
-    email,
-    url,
-    github,
-  } = config.require('name', 'email', 'url', 'github').values();
+  const { name, email, url, github } = config.require('name', 'email', 'url', 'github').values();
 
   const packageName = path.basename(process.cwd());
   const repository = `${github}/${packageName}`;
@@ -27,8 +22,11 @@ function task(config) {
     engines: {
       node: '>=10',
     },
-    main: 'index.js',
+    main: 'dist/index.js',
     scripts: {
+      clean: 'run-p clean:*',
+      'clean:dist': 'rm -rf dist',
+      'clean:node_modules': 'rm -rf node_modules',
       test: 'echo "Error: no test specified" && exit 1',
     },
     dependencies: {},

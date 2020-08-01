@@ -4,6 +4,9 @@
   "description": "Michael Danilov's tasks for Mrm",
   "main": "config.json",
   "scripts": {
+    "clean": "run-p clean:*",
+    "clean:dist": "rm -rf dist",
+    "clean:node_modules": "rm -rf node_modules",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:ts": "eslint --ext .ts,.tsx .",
     "lint": "run-p lint:* && npm run prettier && npm run spellcheck",
