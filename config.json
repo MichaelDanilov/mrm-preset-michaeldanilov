@@ -2,16 +2,17 @@
   "aliases": {
     "node": [
       "package",
+      "gitignore",
+      "editorconfig",
       "nvm",
       "eslint",
-      "jsconfig",
       "yaspeller",
+      "prettier",
+      "typescript",
       "lint-staged",
-      "editorconfig",
-      "gitignore",
-      "contributing",
       "license",
-      "readme"
+      "readme",
+      "contributing"
     ]
   },
   "name": "Michael Danilov",
